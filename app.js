@@ -27,8 +27,6 @@ app.get("/", function(req, res) {
 
 })
 
-
-
 app.get("/about", function(req, res) {
   res.render("about", {
     aboutContent: aboutContent
@@ -55,6 +53,19 @@ app.post("/compose", function(req, res) {
 });
 
 
+app.get("/posts/:topics", function(req, res) {
+  const requestedTitle = req.params.topics;
+  posts.forEach(function(post) {
+    const postTitle = post.myTitlePost;
+    if (postTitle === requestedTitle) {
+      console.log("Match!");
+    } else {
+      console.log("sorry....");
+    }
+  });
+
+
+});
 
 
 app.listen(3000, function() {
