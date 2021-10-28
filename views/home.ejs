@@ -5,7 +5,7 @@
 
 <%  posts.forEach(function(post){ %>
 <h1><%= post.myTitlePost %></h1>
-<p><%= post.mybodyPost %></p>
+<p><%= post.mybodyPost.substring(0,100) + " ..." %><a href="/posts/<%= post.myTitlePost %>">Read More</a></p>
 <%  }) %>
 
 
